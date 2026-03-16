@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algine Plus® — Pure Arctic Seaweed Complex from Sweden Since 1988</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --arctic-blue: #0B1D26;
+            --ice-white: #F8FAFB;
+            --glacier-blue: #4A90A4;
+            --deep-ocean: #1A3F4D;
+            --kelp-green: #2D5F4F;
+            --gold-accent: #C9A961;
+            --text-muted: #6B7280;
+            --swedish-blue: #006AA7;
+            --swedish-yellow: #FECC00;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--ice-white);
+            color: var(--arctic-blue);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 250, 251, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(11, 29, 38, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--arctic-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo::before {
+            content: '❄';
+            font-size: 1.8rem;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--arctic-blue);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--glacier-blue);
+        }
+        
+        .cta-button {
+            background: var(--glacier-blue);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--glacier-blue);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--glacier-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(180deg, #0B1D26 0%, #1A3F4D 50%, #2D5F4F 100%);
+        }
+        
+        /* Animated Aurora Borealis */
+        .aurora {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(74, 144, 164, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(45, 95, 79, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(201, 169, 97, 0.2) 0%, transparent 50%);
+            animation: aurora-wave 15s ease-in-out infinite;
+        }
+        
+        @keyframes aurora-wave {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: translateY(-50px) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Floating ice particles */
+        .ice-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .ice-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float-particle 20s linear infinite;
+        }
+        
+        .ice-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .ice-particle:nth-child(2) { left: 25%; animation-delay: 3s; }
+        .ice-particle:nth-child(3) { left: 45%; animation-delay: 6s; }
+        .ice-particle:nth-child(4) { left: 65%; animation-delay: 2s; }
+        .ice-particle:nth-child(5) { left: 85%; animation-delay: 8s; }
+        .ice-particle:nth-child(6) { left: 35%; animation-delay: 4s; }
+        .ice-particle:nth-child(7) { left: 55%; animation-delay: 7s; }
+        .ice-particle:nth-child(8) { left: 75%; animation-delay: 1s; }
+        
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 950px;
+            padding: 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(74, 144, 164, 0.2);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(74, 144, 164, 0.3);
+            font-weight: 600;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-highlight {
+            color: var(--glacier-blue);
+            background: linear-gradient(90deg, #4A90A4, #2D5F4F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtext {
+            font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .primary-cta {
+            background: var(--glacier-blue);
+            color: white;
+            padding: 1.3rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            border: 2px solid var(--glacier-blue);
+            box-shadow: 0 10px 30px rgba(74, 144, 164, 0.3);
+        }
+        
+        .primary-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(74, 144, 164, 0.5);
+        }
+        
+        .secondary-cta {
+            background: transparent;
+            color: white;
+            padding: 1.3rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .secondary-cta:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+        
+        .trust-bar {
+            margin-top: 5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .trust-item::before {
+            content: '✓';
+            color: var(--glacier-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* NEW: Legacy Section */
+        .legacy-section {
+            background: white;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .legacy-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .legacy-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-year {
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--glacier-blue);
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .legacy-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .legacy-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--glacier-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .legacy-content h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            color: var(--arctic-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .legacy-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .legacy-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .legacy-stat {
+            padding: 1.5rem;
+            background: var(--ice-white);
+            border-radius: 12px;
+            border-left: 4px solid var(--glacier-blue);
+        }
+
+        .legacy-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--glacier-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .legacy-stat-label {
+            font-size: 0.9rem;
+            color: var(--arctic-blue);
+            font-weight: 600;
+        }
+
+        /* NEW: Certifications Section */
+        .certifications-section {
+            background: linear-gradient(180deg, var(--ice-white) 0%, #E8F4F8 100%);
+            padding: 6rem 2rem;
+        }
+
+        .certifications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--glacier-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--arctic-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(11, 29, 38, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--glacier-blue);
+            box-shadow: 0 12px 40px rgba(11, 29, 38, 0.15);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--arctic-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .cert-number {
+            font-size: 0.85rem;
+            color: var(--glacier-blue);
+            font-weight: 600;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Origin Story Section */
+        .origin-section {
+            position: relative;
+            background: var(--ice-white);
+            padding: 8rem 2rem;
+            overflow: hidden;
+        }
+        
+        .origin-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--glacier-blue), transparent);
+            opacity: 0.2;
+        }
+        
+        .origin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .origin-image {
+            position: relative;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(11, 29, 38, 0.15);
+        }
+        
+        .arctic-map {
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, rgba(74, 144, 164, 0.9) 0%, rgba(45, 95, 79, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><circle cx="200" cy="300" r="80" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="250" r="100" fill="rgba(255,255,255,0.08)"/><text x="200" y="305" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">ICELAND</text><text x="600" y="255" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">GREENLAND</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .harvest-badge {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .harvest-badge-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--glacier-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .harvest-badge-text {
+            font-size: 1.1rem;
+            color: var(--arctic-blue);
+            font-weight: 600;
+        }
+        
+        .origin-content h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            color: var(--arctic-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .origin-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--glacier-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .origin-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .origin-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .origin-stat {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid var(--glacier-blue);
+        }
+        
+        .origin-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--glacier-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .origin-stat-label {
+            font-size: 0.9rem;
+            color: var(--arctic-blue);
+            font-weight: 600;
+        }
+        
+        /* 4 Seaweed Species Section */
+        .species-section {
+            background: var(--arctic-blue);
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .species-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(74, 144, 164, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(45, 95, 79, 0.15) 0%, transparent 50%);
+        }
+        
+        .species-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-header .origin-label {
+            color: var(--glacier-blue);
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: white;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .species-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .species-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .species-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--card-color);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .species-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--card-color);
+        }
+        
+        .species-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .species-card.green { --card-color: #4ADE80; }
+        .species-card.brown { --card-color: #92400E; }
+        .species-card.red { --card-color: #EF4444; }
+        .species-card.calcium { --card-color: #F59E0B; }
+        
+        .species-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        }
+        
+        .species-name {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .species-type {
+            font-size: 0.85rem;
+            color: var(--card-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .species-benefits {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .species-benefits li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .species-benefits li::before {
+            content: '→';
+            color: var(--card-color);
+            font-weight: 700;
+        }
+        
+        /* Complete Nutrition Section */
+        .nutrition-section {
+            background: var(--ice-white);
+            padding: 8rem 2rem;
+        }
+        
+        .nutrition-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .nutrition-facts {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(11, 29, 38, 0.08);
+        }
+        
+        .nutrition-facts h3 {
+            font-size: 2rem;
+            color: var(--arctic-blue);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .nutrition-categories {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .nutrition-category {
+            border-bottom: 2px solid rgba(11, 29, 38, 0.1);
+            padding-bottom: 1.5rem;
+        }
+        
+        .category-title {
+            font-size: 1.1rem;
+            color: var(--glacier-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .category-count {
+            background: var(--glacier-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+        
+        .category-items {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        
+        .nutrition-highlights {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .highlight-card {
+            background: linear-gradient(135deg, var(--glacier-blue), var(--kelp-green));
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(74, 144, 164, 0.2);
+        }
+        
+        .highlight-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .highlight-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        /* Purity Promise Section */
+        .purity-section {
+            background: linear-gradient(180deg, #E8F4F8 0%, var(--ice-white) 100%);
+            padding: 8rem 2rem;
+        }
+        
+        .purity-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .purity-container h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            color: var(--arctic-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .purity-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .purity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .purity-badge {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(11, 29, 38, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .purity-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(11, 29, 38, 0.12);
+        }
+        
+        .purity-badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .purity-badge-text {
+            font-size: 0.95rem;
+            color: var(--arctic-blue);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .no-list {
+            background: var(--arctic-blue);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .no-list h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--glacier-blue);
+        }
+        
+        .no-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .no-grid li {
+            list-style: none;
+            padding: 0.5rem;
+            text-align: left;
+            opacity: 0.9;
+        }
+        
+        .no-grid li::before {
+            content: '✗';
+            color: #EF4444;
+            margin-right: 0.75rem;
+            font-weight: 700;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--arctic-blue) 0%, var(--deep-ocean) 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(74, 144, 164, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(201, 169, 97, 0.15) 0%, transparent 50%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .cta-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .cta-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--arctic-blue);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .contact-info li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info strong {
+            color: var(--glacier-blue);
+            min-width: 60px;
+        }
+
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--glacier-blue);
+        }
+        
+        .footer-section h4 {
+            color: var(--glacier-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .footer-section a:hover {
+            color: var(--glacier-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .origin-container,
+            .nutrition-grid,
+            .legacy-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .origin-image {
+                height: 400px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .species-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .origin-stats,
+            .legacy-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                ALGINE PLUS®
+                <span class="logo-subtitle">Since 1988</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#legacy">Our Story</a></li>
+                <li><a href="#origin">Arctic Origin</a></li>
+                <li><a href="#species">4 Seaweeds</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+            <a href="#shop" class="cta-button">Shop Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="aurora"></div>
+        <div class="ice-particles">
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+            <div class="ice-particle"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Swedish Excellence Since 1988 • Exported to 20+ Countries</div>
+            <h1>Pure <span class="hero-highlight">Arctic Nutrition</span><br>From 4 Wild Seaweeds</h1>
+            <p class="hero-subtext">Hand-harvested from environmentally protected waters of Iceland and Greenland. A complete whole-food complex containing 15 vitamins, 20 minerals, 25 trace elements, 18 amino acids, and over 100 active compounds your body needs to thrive.</p>
+            <div class="hero-cta-group">
+                <a href="#shop" class="primary-cta">Experience Algine Plus →</a>
+                <a href="#legacy" class="secondary-cta">Our 36-Year Story</a>
+            </div>
+            <div class="trust-bar">
+                <div class="trust-item">HACCP & GMP Certified</div>
+                <div class="trust-item">Health Canada Approved</div>
+                <div class="trust-item">Made in Sweden</div>
+                <div class="trust-item">Exported to 20+ Countries</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Legacy Section -->
+    <section class="legacy-section" id="legacy">
+        <div class="legacy-container">
+            <div class="legacy-timeline reveal">
+                <div class="timeline-year">1988</div>
+                <div class="legacy-content">
+                    <div class="legacy-label">36 Years of Excellence</div>
+                    <h2>A Swedish Legacy of Purity & Science</h2>
+                    <p class="legacy-description">
+                        Founded in 1988 in Örebro, Sweden, Algine Products began with a single vision: to bring the world's purest seaweed nutrition from the Arctic Ocean to those who need it most.
+                    </p>
+                    <p class="legacy-description">
+                        What started as exports to Slovenia has grown into a global presence across 20+ countries on every continent, with branch offices worldwide. Our headquarters and production facility remain in Sweden, where we maintain pharmaceutical-grade standards that exceed both Swedish and EU requirements.
+                    </p>
+                </div>
+            </div>
+            <div class="legacy-stats reveal">
+                <div class="legacy-stat">
+                    <div class="legacy-stat-number">1988</div>
+                    <div class="legacy-stat-label">Founded in Sweden</div>
+                </div>
+                <div class="legacy-stat">
+                    <div class="legacy-stat-number">20+</div>
+                    <div class="legacy-stat-label">Countries Worldwide</div>
+                </div>
+                <div class="legacy-stat">
+                    <div class="legacy-stat-number">36</div>
+                    <div class="legacy-stat-label">Years of Expertise</div>
+                </div>
+                <div class="legacy-stat">
+                    <div class="legacy-stat-number">100%</div>
+                    <div class="legacy-stat-label">Swedish Quality Control</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Certifications Section -->
+    <section class="certifications-section" id="certifications">
+        <div class="certifications-container">
+            <div class="section-header reveal">
+                <div class="section-label">Pharmaceutical-Grade Standards</div>
+                <h2 class="section-title">Certified by World's Strictest Authorities</h2>
+                <p class="section-subtitle">Our production facility meets or exceeds the highest international standards for food safety, quality assurance, and environmental protection.</p>
+            </div>
+
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🇸🇪</div>
+                    <div class="cert-name">Swedish National Food Administration</div>
+                    <div class="cert-description">Premises approved and regularly inspected by Livsmedelsverket, Sweden's strictest food safety authority.</div>
+                </div>
+
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🇪🇺</div>
+                    <div class="cert-name">EU EFSA Compliance</div>
+                    <div class="cert-description">Full compliance with European Food Safety Authority standards for supplements and natural health products.</div>
+                </div>
+
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🏭</div>
+                    <div class="cert-name">HACCP Certified</div>
+                    <div class="cert-description">Hazard Analysis Critical Control Points system ensures every batch is free from contamination.</div>
+                </div>
+
+                <div class="cert-card reveal">
+                    <div class="cert-icon">⚗️</div>
+                    <div class="cert-name">GMP Certified</div>
+                    <div class="cert-description">Good Manufacturing Practice certification guarantees pharmaceutical-grade production standards.</div>
+                </div>
+
+                <div class="cert-card reveal">
+                    <div class="cert-icon">🇨🇦</div>
+                    <div class="cert-name">Health Canada Approved</div>
+                    <div class="cert-description">Officially licensed natural health product in Canada.</div>
+                    <div class="cert-number">NPN: 80007659</div>
+                </div>
+
+                <div class="cert-card reveal">
+                    <div class="cert-icon">✓</div>
+                    <div class="cert-name">Swedish Health Food Council</div>
+                    <div class="cert-description">Products conform to the rigorous standards of Hälsokostrådet for ethical and transparent labeling.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Section -->
+    <section class="origin-section" id="origin">
+        <div class="origin-container">
+            <div class="origin-image reveal">
+                <div class="arctic-map"></div>
+                <div class="harvest-badge">
+                    <div class="harvest-badge-title">Licensed Harvest Region</div>
+                    <div class="harvest-badge-text">Greenland & Iceland • 66-72°N</div>
+                </div>
+            </div>
+            <div class="origin-content reveal">
+                <div class="origin-label">Environmentally Protected Waters</div>
+                <h2>Our Own Arctic Ocean Territory</h2>
+                <p class="origin-description">
+                    We hold exclusive, environmentally protected harvest rights in the pristine Arctic waters surrounding Iceland and Greenland — the only regions on Earth still free from industrial pollution, heavy shipping, and agricultural runoff.
+                </p>
+                <p class="origin-description">
+                    Our seaweed grows wild in nutrient-dense glacial waters, absorbing trace minerals from ancient volcanic bedrock and benefiting from 24-hour summer sunlight. Every harvest is done by hand or small fishing boats (never industrial trawlers) to preserve the delicate marine ecosystem.
+                </p>
+                <div class="origin-stats">
+                    <div class="origin-stat">
+                        <div class="origin-stat-number">100%</div>
+                        <div class="origin-stat-label">Hand-Harvested</div>
+                    </div>
+                    <div class="origin-stat">
+                        <div class="origin-stat-number">-20°C</div>
+                        <div class="origin-stat-label">Freeze-Dried (97% Retention)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Seaweed Species Section -->
+    <section class="species-section" id="species">
+        <div class="species-container">
+            <div class="section-header reveal">
+                <div class="origin-label">The Algine Plus Formula</div>
+                <h2>4 Arctic Seaweed Species<br>Found Nowhere Else on Earth</h2>
+                <p>Our proprietary blend combines green, brown, red, and calcium-rich seaweeds — a complete spectrum of marine nutrition engineered by nature over millions of years.</p>
+            </div>
+            
+            <div class="species-grid">
+                <div class="species-card green reveal">
+                    <div class="species-icon">🌿</div>
+                    <div class="species-name">Green Seaweed</div>
+                    <div class="species-type">Chlorophyta</div>
+                    <ul class="species-benefits">
+                        <li>Chlorophyll for cellular detox</li>
+                        <li>Carotenoids & antioxidants</li>
+                        <li>Vitamin C & E complex</li>
+                        <li>Immune system support</li>
+                    </ul>
+                </div>
+                
+                <div class="species-card brown reveal">
+                    <div class="species-icon">🌊</div>
+                    <div class="species-name">Brown Seaweed</div>
+                    <div class="species-type">Phaeophyceae</div>
+                    <ul class="species-benefits">
+                        <li>Alginates for heavy metal binding</li>
+                        <li>Fucoxanthin for metabolism</li>
+                        <li>Iodine for thyroid health</li>
+                        <li>Omega-3 fatty acids (EPA/DHA)</li>
+                    </ul>
+                </div>
+                
+                <div class="species-card red reveal">
+                    <div class="species-icon">🔴</div>
+                    <div class="species-name">Red Seaweed</div>
+                    <div class="species-type">Rhodophyta</div>
+                    <ul class="species-benefits">
+                        <li>Sulfated polysaccharides</li>
+                        <li>Anti-viral compounds</li>
+                        <li>Collagen production support</li>
+                        <li>Cardiovascular health</li>
+                    </ul>
+                </div>
+                
+                <div class="species-card calcium reveal">
+                    <div class="species-icon">⚪</div>
+                    <div class="species-name">Calcium Seaweed</div>
+                    <div class="species-type">Lithothamnion</div>
+                    <ul class="species-benefits">
+                        <li>74 trace minerals</li>
+                        <li>Alkaline pH stabilization</li>
+                        <li>Bone density support</li>
+                        <li>Magnesium & calcium balance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Nutrition Section -->
+    <section class="nutrition-section" id="nutrition">
+        <div class="nutrition-container">
+            <div class="section-header reveal">
+                <div class="section-label">Complete Whole Food Nutrition</div>
+                <h2>Everything Your Body Needs<br>In One Arctic Formula</h2>
+            </div>
+            
+            <div class="nutrition-grid">
+                <div class="nutrition-facts reveal">
+                    <h3>Algine Plus Contains:</h3>
+                    
+                    <div class="nutrition-categories">
+                        <div class="nutrition-category">
+                            <div class="category-title">
+                                Vitamins
+                                <span class="category-count">15</span>
+                            </div>
+                            <div class="category-items">A, B1, B2, B3, B5, B6, B7, B9, B12, C, D, E, K1, K2, Choline</div>
+                        </div>
+                        
+                        <div class="nutrition-category">
+                            <div class="category-title">
+                                Essential Minerals
+                                <span class="category-count">20</span>
+                            </div>
+                            <div class="category-items">Calcium, Magnesium, Potassium, Sodium, Phosphorus, Sulfur, Chloride, Iodine, Iron, Zinc, Copper, Manganese, Chromium, Molybdenum, Selenium, Silicon, Boron, Vanadium, Cobalt, Fluoride</div>
+                        </div>
+                        
+                        <div class="nutrition-category">
+                            <div class="category-title">
+                                Trace Elements
+                                <span class="category-count">25+</span>
+                            </div>
+                            <div class="category-items">Including rare earth minerals from volcanic bedrock, only found in Arctic seaweed</div>
+                        </div>
+                        
+                        <div class="nutrition-category">
+                            <div class="category-title">
+                                Amino Acids
+                                <span class="category-count">18</span>
+                            </div>
+                            <div class="category-items">Complete protein spectrum including all 9 essential amino acids</div>
+                        </div>
+                        
+                        <div class="nutrition-category">
+                            <div class="category-title">
+                                Essential Fatty Acids
+                            </div>
+                            <div class="category-items">Omega-3 (EPA/DHA/ALA), Omega-6 (GLA), Omega-9, CLA (Conjugated Linoleic Acid)</div>
+                        </div>
+                        
+                        <div class="nutrition-category">
+                            <div class="category-title">
+                                Additional Compounds
+                            </div>
+                            <div class="category-items">Coenzyme Q10, Alginates, Fucoxanthin, Chlorophyll, Mannitol, Natural Enzymes, Antioxidants, Dietary Fiber, Polysaccharides</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nutrition-highlights reveal">
+                    <div class="highlight-card">
+                        <div class="highlight-number">100+</div>
+                        <div class="highlight-label">Active Compounds Per Serving</div>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <div class="highlight-number">97%</div>
+                        <div class="highlight-label">Nutrient Retention (Freeze-Dried)</div>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <div class="highlight-number">0</div>
+                        <div class="highlight-label">Synthetic Additives or Fillers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purity Promise Section -->
+    <section class="purity-section" id="purity">
+        <div class="purity-container">
+            <div class="reveal">
+                <div class="section-label">Absolute Purity Guaranteed</div>
+                <h2>What's NOT in Algine Plus</h2>
+                <p class="purity-subtitle">We believe purity is just as important as potency. That's why Algine Plus contains zero synthetic additives, allergens, or unnecessary ingredients.</p>
+            </div>
+            
+            <div class="purity-grid reveal">
+                <div class="purity-badge">
+                    <div class="purity-badge-icon">🚫</div>
+                    <div class="purity-badge-text">Gluten Free</div>
+                </div>
+                <div class="purity-badge">
+                    <div class="purity-badge-icon">🚫</div>
+                    <div class="purity-badge-text">Lactose Free</div>
+                </div>
+                <div class="purity-badge">
+                    <div class="purity-badge-icon">🚫</div>
+                    <div class="purity-badge-text">Soy Free</div>
+                </div>
+                <div class="purity-badge">
+                    <div class="purity-badge-icon">🚫</div>
+                    <div class="purity-badge-text">GMO Free</div>
+                </div>
+                <div class="purity-badge">
+                    <div class="purity-badge-icon">🌱</div>
+                    <div class="purity-badge-text">100% Vegan</div>
+                </div>
+                <div class="purity-badge">
+                    <div class="purity-badge-icon">❄️</div>
+                    <div class="purity-badge-text">Freeze-Dried Raw</div>
+                </div>
+            </div>
+            
+            <div class="no-list reveal">
+                <h4>Absolutely NO:</h4>
+                <ul class="no-grid">
+                    <li>Gluten</li>
+                    <li>Lactose</li>
+                    <li>Soy</li>
+                    <li>Corn</li>
+                    <li>Wheat</li>
+                    <li>Yeast</li>
+                    <li>Sugar</li>
+                    <li>Citrus</li>
+                    <li>Colorants</li>
+                    <li>Animal Products</li>
+                    <li>Nuts</li>
+                    <li>Tomato</li>
+                    <li>Egg</li>
+                    <li>Dairy</li>
+                    <li>Caffeine</li>
+                    <li>Alcohol</li>
+                    <li>Taurine</li>
+                    <li>Preservatives</li>
+                    <li>Synthetic Additives</li>
+                    <li>Flow Agents</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="shop">
+        <div class="cta-content reveal">
+            <h2>Experience Arctic Purity</h2>
+            <p>Join thousands across 20+ countries who have discovered the transformative power of the world's most complete whole-food nutrition from the last unpolluted waters on Earth.</p>
+            <div class="cta-buttons">
+                <a href="#" class="primary-cta">Shop Algine Plus — $79</a>
+                <a href="#" class="secondary-cta">Subscribe & Save 25%</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Algine Products Sweden</h3>
+                <p>Since 1988, we've been bringing the purest Arctic seaweed nutrition to the world. Made in Sweden, trusted globally.</p>
+                <ul class="contact-info">
+                    <li><strong>Address:</strong> Box 1722, 701 17 Örebro, Sweden</li>
+                    <li><strong>Phone:</strong> <a href="tel:+46192000000">+46-19-20 00 00</a></li>
+                    <li><strong>Fax:</strong> +46-19-20 00 30</li>
+                    <li><strong>Email:</strong> <a href="mailto:info@algineplus.com">info@algineplus.com</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#">Algine Plus Formula</a></li>
+                    <li><a href="#">Other Products</a></li>
+                    <li><a href="#">Subscription Plans</a></li>
+                    <li><a href="#">Wholesale Inquiry</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us (Since 1988)</a></li>
+                    <li><a href="#">Global Offices</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Become a Distributor</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Algine Products Sweden AB. Established 1988. | HACCP & GMP Certified | Health Canada NPN: 80007659 | Swedish National Food Administration Approved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Check on load
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 30px rgba(11, 29, 38, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
