@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algine Plus® — Pure Arctic Seaweed Complex from Sweden Since 1988</title>
+    <title>Algine Plus® — Arctic Seaweed Complex with Spirulina & CoQ10 | Made in Sweden Since 1988</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -23,6 +23,7 @@
             --text-muted: #6B7280;
             --swedish-blue: #006AA7;
             --swedish-yellow: #FECC00;
+            --price-green: #10B981;
         }
         
         body {
@@ -122,7 +123,6 @@
             background: linear-gradient(180deg, #0B1D26 0%, #1A3F4D 50%, #2D5F4F 100%);
         }
         
-        /* Animated Aurora Borealis */
         .aurora {
             position: absolute;
             top: 0;
@@ -148,7 +148,6 @@
             }
         }
         
-        /* Floating ice particles */
         .ice-particles {
             position: absolute;
             width: 100%;
@@ -219,6 +218,12 @@
             margin-bottom: 2rem;
             border: 1px solid rgba(74, 144, 164, 0.3);
             font-weight: 600;
+        }
+
+        .tv-badge {
+            background: rgba(254, 204, 0, 0.2);
+            border: 1px solid rgba(254, 204, 0, 0.4);
+            margin-left: 1rem;
         }
         
         .hero h1 {
@@ -316,7 +321,307 @@
             font-size: 1.2rem;
         }
 
-        /* NEW: Legacy Section */
+        /* NEW: Pricing Section */
+        .pricing-section {
+            background: white;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--glacier-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--arctic-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .price-card {
+            background: var(--ice-white);
+            border: 2px solid rgba(11, 29, 38, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card.popular {
+            border-color: var(--glacier-blue);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(74, 144, 164, 0.2);
+        }
+
+        .price-card.popular::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--glacier-blue);
+            color: white;
+            padding: 0.5rem 3rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transform: rotate(45deg);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(11, 29, 38, 0.15);
+        }
+
+        .price-quantity {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--arctic-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        .price-per-bottle {
+            font-size: 0.95rem;
+            color: var(--price-green);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .price-savings {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--price-green);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .price-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(11, 29, 38, 0.05);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--glacier-blue);
+            font-weight: 700;
+        }
+
+        .price-cta {
+            background: var(--glacier-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .price-cta:hover {
+            background: var(--deep-ocean);
+            transform: translateY(-2px);
+        }
+
+        /* NEW: Dosage Protocol Section */
+        .dosage-section {
+            background: linear-gradient(135deg, var(--kelp-green), var(--deep-ocean));
+            padding: 6rem 2rem;
+            color: white;
+        }
+
+        .dosage-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .dosage-content h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .dosage-steps {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .dosage-step {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dosage-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--glacier-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-description {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .warning-box {
+            background: rgba(254, 204, 0, 0.2);
+            border: 2px solid rgba(254, 204, 0, 0.4);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .warning-box strong {
+            color: var(--swedish-yellow);
+        }
+
+        /* NEW: Formula Breakdown */
+        .formula-section {
+            background: var(--ice-white);
+            padding: 8rem 2rem;
+        }
+
+        .formula-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .formula-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(11, 29, 38, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .formula-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(11, 29, 38, 0.15);
+        }
+
+        .formula-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .formula-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--glacier-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .formula-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--arctic-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .formula-dri {
+            font-size: 0.9rem;
+            color: var(--price-green);
+            font-weight: 600;
+        }
+
+        .formula-benefit {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Legacy Section */
         .legacy-section {
             background: white;
             padding: 6rem 2rem;
@@ -403,221 +708,7 @@
             font-weight: 600;
         }
 
-        /* NEW: Certifications Section */
-        .certifications-section {
-            background: linear-gradient(180deg, var(--ice-white) 0%, #E8F4F8 100%);
-            padding: 6rem 2rem;
-        }
-
-        .certifications-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--glacier-blue);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            color: var(--arctic-blue);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .cert-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(11, 29, 38, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--glacier-blue);
-            box-shadow: 0 12px 40px rgba(11, 29, 38, 0.15);
-        }
-
-        .cert-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .cert-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--arctic-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-description {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .cert-number {
-            font-size: 0.85rem;
-            color: var(--glacier-blue);
-            font-weight: 600;
-            margin-top: 1rem;
-            font-family: 'Courier New', monospace;
-        }
-        
-        /* Origin Story Section */
-        .origin-section {
-            position: relative;
-            background: var(--ice-white);
-            padding: 8rem 2rem;
-            overflow: hidden;
-        }
-        
-        .origin-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, var(--glacier-blue), transparent);
-            opacity: 0.2;
-        }
-        
-        .origin-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-        
-        .origin-image {
-            position: relative;
-            height: 600px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(11, 29, 38, 0.15);
-        }
-        
-        .arctic-map {
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(135deg, rgba(74, 144, 164, 0.9) 0%, rgba(45, 95, 79, 0.9) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><circle cx="200" cy="300" r="80" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="250" r="100" fill="rgba(255,255,255,0.08)"/><text x="200" y="305" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">ICELAND</text><text x="600" y="255" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">GREENLAND</text></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .harvest-badge {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .harvest-badge-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--glacier-blue);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .harvest-badge-text {
-            font-size: 1.1rem;
-            color: var(--arctic-blue);
-            font-weight: 600;
-        }
-        
-        .origin-content h2 {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            color: var(--arctic-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        
-        .origin-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--glacier-blue);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .origin-description {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        
-        .origin-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .origin-stat {
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            border-left: 4px solid var(--glacier-blue);
-        }
-        
-        .origin-stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--glacier-blue);
-            margin-bottom: 0.5rem;
-        }
-        
-        .origin-stat-label {
-            font-size: 0.9rem;
-            color: var(--arctic-blue);
-            font-weight: 600;
-        }
-        
-        /* 4 Seaweed Species Section */
+        /* Species Section */
         .species-section {
             background: var(--arctic-blue);
             padding: 8rem 2rem;
@@ -644,7 +735,7 @@
             z-index: 10;
         }
         
-        .section-header .origin-label {
+        .section-header .section-label {
             color: var(--glacier-blue);
         }
         
@@ -729,6 +820,13 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
         }
+
+        .species-latin {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
         
         .species-benefits {
             list-style: none;
@@ -749,244 +847,6 @@
             content: '→';
             color: var(--card-color);
             font-weight: 700;
-        }
-        
-        /* Complete Nutrition Section */
-        .nutrition-section {
-            background: var(--ice-white);
-            padding: 8rem 2rem;
-        }
-        
-        .nutrition-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .nutrition-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-        
-        .nutrition-facts {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 40px rgba(11, 29, 38, 0.08);
-        }
-        
-        .nutrition-facts h3 {
-            font-size: 2rem;
-            color: var(--arctic-blue);
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-        
-        .nutrition-categories {
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .nutrition-category {
-            border-bottom: 2px solid rgba(11, 29, 38, 0.1);
-            padding-bottom: 1.5rem;
-        }
-        
-        .category-title {
-            font-size: 1.1rem;
-            color: var(--glacier-blue);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .category-count {
-            background: var(--glacier-blue);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-        }
-        
-        .category-items {
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-        
-        .nutrition-highlights {
-            display: grid;
-            gap: 1.5rem;
-        }
-        
-        .highlight-card {
-            background: linear-gradient(135deg, var(--glacier-blue), var(--kelp-green));
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(74, 144, 164, 0.2);
-        }
-        
-        .highlight-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-        
-        .highlight-label {
-            font-size: 1rem;
-            opacity: 0.9;
-            font-weight: 600;
-        }
-        
-        /* Purity Promise Section */
-        .purity-section {
-            background: linear-gradient(180deg, #E8F4F8 0%, var(--ice-white) 100%);
-            padding: 8rem 2rem;
-        }
-        
-        .purity-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .purity-container h2 {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            color: var(--arctic-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .purity-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 4rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .purity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-        
-        .purity-badge {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(11, 29, 38, 0.06);
-            transition: all 0.3s ease;
-        }
-        
-        .purity-badge:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(11, 29, 38, 0.12);
-        }
-        
-        .purity-badge-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .purity-badge-text {
-            font-size: 0.95rem;
-            color: var(--arctic-blue);
-            font-weight: 600;
-            line-height: 1.5;
-        }
-        
-        .no-list {
-            background: var(--arctic-blue);
-            color: white;
-            padding: 3rem;
-            border-radius: 16px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .no-list h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--glacier-blue);
-        }
-        
-        .no-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .no-grid li {
-            list-style: none;
-            padding: 0.5rem;
-            text-align: left;
-            opacity: 0.9;
-        }
-        
-        .no-grid li::before {
-            content: '✗';
-            color: #EF4444;
-            margin-right: 0.75rem;
-            font-weight: 700;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--arctic-blue) 0%, var(--deep-ocean) 100%);
-            padding: 8rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 30% 50%, rgba(74, 144, 164, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(201, 169, 97, 0.15) 0%, transparent 50%);
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .cta-content h2 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            color: white;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .cta-content p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 3rem;
-            line-height: 1.7;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
         
         /* Footer */
@@ -1085,14 +945,13 @@
         
         /* Responsive */
         @media (max-width: 1024px) {
-            .origin-container,
-            .nutrition-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dosage-container,
             .legacy-container {
                 grid-template-columns: 1fr;
-            }
-            
-            .origin-image {
-                height: 400px;
             }
 
             .footer-container {
@@ -1114,11 +973,11 @@
                 font-size: 2.5rem;
             }
             
-            .species-grid {
+            .species-grid,
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
             
-            .origin-stats,
             .legacy-stats {
                 grid-template-columns: 1fr;
             }
@@ -1127,8 +986,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .cert-grid {
-                grid-template-columns: 1fr;
+            .price-card.popular {
+                transform: scale(1);
             }
         }
         
@@ -1154,12 +1013,12 @@
                 <span class="logo-subtitle">Since 1988</span>
             </div>
             <ul class="nav-links">
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#formula">Formula</a></li>
+                <li><a href="#species">3 Seaweeds</a></li>
                 <li><a href="#legacy">Our Story</a></li>
-                <li><a href="#origin">Arctic Origin</a></li>
-                <li><a href="#species">4 Seaweeds</a></li>
-                <li><a href="#certifications">Certifications</a></li>
             </ul>
-            <a href="#shop" class="cta-button">Shop Now</a>
+            <a href="#pricing" class="cta-button">Shop Now</a>
         </div>
     </nav>
 
@@ -1177,35 +1036,256 @@
             <div class="ice-particle"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-badge">Swedish Excellence Since 1988 • Exported to 20+ Countries</div>
-            <h1>Pure <span class="hero-highlight">Arctic Nutrition</span><br>From 4 Wild Seaweeds</h1>
-            <p class="hero-subtext">Hand-harvested from environmentally protected waters of Iceland and Greenland. A complete whole-food complex containing 15 vitamins, 20 minerals, 25 trace elements, 18 amino acids, and over 100 active compounds your body needs to thrive.</p>
+            <div>
+                <div class="hero-badge">Made in Sweden Since 1988 • Exported to 20+ Countries</div>
+                <div class="hero-badge tv-badge">As Seen on TV: "Du är vad du äter" 📺</div>
+            </div>
+            <h1><span class="hero-highlight">Spirulina + Kelp + Dulse</span><br>+ CoQ10 Arctic Formula</h1>
+            <p class="hero-subtext">300 tablets of pure Arctic seaweed from Greenland & Iceland. Spirulina for energy, Kelp for thyroid, Dulse for minerals, CoQ10 for cellular power. Everything you need in one tablet.</p>
             <div class="hero-cta-group">
-                <a href="#shop" class="primary-cta">Experience Algine Plus →</a>
-                <a href="#legacy" class="secondary-cta">Our 36-Year Story</a>
+                <a href="#pricing" class="primary-cta">Shop Algine Plus — 199 SEK →</a>
+                <a href="#formula" class="secondary-cta">See What's Inside</a>
             </div>
             <div class="trust-bar">
                 <div class="trust-item">HACCP & GMP Certified</div>
                 <div class="trust-item">Health Canada Approved</div>
-                <div class="trust-item">Made in Sweden</div>
-                <div class="trust-item">Exported to 20+ Countries</div>
+                <div class="trust-item">300 Tablets / 60 Days</div>
+                <div class="trust-item">100% Vegan</div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Legacy Section -->
+    <!-- NEW: Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-container">
+            <div class="section-header reveal">
+                <div class="section-label">Swedish Quality, Global Trust</div>
+                <h2 class="section-title">Choose Your Supply</h2>
+                <p class="section-subtitle">300 tablets per bottle = 60-day supply at 5 tablets/day. Save more when you stock up.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card reveal">
+                    <div class="price-quantity">1 Bottle</div>
+                    <div class="price-amount">199<span class="price-currency">SEK</span></div>
+                    <div class="price-per-bottle">199 SEK per bottle</div>
+                    <ul class="price-features">
+                        <li>300 tablets (60-day supply)</li>
+                        <li>Free shipping over 500 SEK</li>
+                        <li>Perfect for first-time users</li>
+                    </ul>
+                    <a href="#" class="price-cta">Add to Cart</a>
+                </div>
+
+                <div class="price-card reveal">
+                    <div class="price-quantity">2 Bottles</div>
+                    <div class="price-amount">359<span class="price-currency">SEK</span></div>
+                    <div class="price-per-bottle">179.50 SEK per bottle</div>
+                    <div class="price-savings">SAVE 39 SEK</div>
+                    <ul class="price-features">
+                        <li>600 tablets (4-month supply)</li>
+                        <li>Free shipping included</li>
+                        <li>10% discount</li>
+                    </ul>
+                    <a href="#" class="price-cta">Add to Cart</a>
+                </div>
+
+                <div class="price-card reveal">
+                    <div class="price-quantity">3 Bottles</div>
+                    <div class="price-amount">529<span class="price-currency">SEK</span></div>
+                    <div class="price-per-bottle">176.33 SEK per bottle</div>
+                    <div class="price-savings">SAVE 68 SEK</div>
+                    <ul class="price-features">
+                        <li>900 tablets (6-month supply)</li>
+                        <li>Free shipping included</li>
+                        <li>11% discount</li>
+                    </ul>
+                    <a href="#" class="price-cta">Add to Cart</a>
+                </div>
+
+                <div class="price-card reveal">
+                    <div class="price-quantity">4 Bottles</div>
+                    <div class="price-amount">699<span class="price-currency">SEK</span></div>
+                    <div class="price-per-bottle">174.75 SEK per bottle</div>
+                    <div class="price-savings">SAVE 97 SEK</div>
+                    <ul class="price-features">
+                        <li>1,200 tablets (8-month supply)</li>
+                        <li>Free shipping included</li>
+                        <li>12% discount</li>
+                    </ul>
+                    <a href="#" class="price-cta">Add to Cart</a>
+                </div>
+
+                <div class="price-card popular reveal">
+                    <div class="price-quantity">6 Bottles</div>
+                    <div class="price-amount">1,049<span class="price-currency">SEK</span></div>
+                    <div class="price-per-bottle">174.83 SEK per bottle</div>
+                    <div class="price-savings">SAVE 145 SEK (12% OFF)</div>
+                    <ul class="price-features">
+                        <li>1,800 tablets (12-month supply)</li>
+                        <li>Free priority shipping</li>
+                        <li>Best value for families</li>
+                        <li>Most popular option</li>
+                    </ul>
+                    <a href="#" class="price-cta">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Dosage Protocol Section -->
+    <section class="dosage-section">
+        <div class="dosage-container">
+            <div class="dosage-content reveal">
+                <h2>How to Take Algine Plus</h2>
+                <p style="font-size: 1.15rem; opacity: 0.9; margin-bottom: 2rem;">Follow this proven protocol for best results. Start slow, build up, and feel the difference.</p>
+            </div>
+            <div class="dosage-steps reveal">
+                <div class="dosage-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Day 1: Start with 2 tablets</div>
+                    <div class="step-description">Take in the morning with water. This allows your body to adjust to the natural iodine and nutrient density.</div>
+                </div>
+
+                <div class="dosage-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Days 2-5: Add 1 tablet per day</div>
+                    <div class="step-description">Increase gradually: 3 tablets on day 2, 4 on day 3, until you reach 5 tablets on day 5.</div>
+                </div>
+
+                <div class="dosage-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Maintenance: 5 tablets every morning</div>
+                    <div class="step-description">This is your daily dose. Contains 1500mg seaweed blend, 200µg iodine, 163mg calcium, and 500µg CoQ10.</div>
+                </div>
+
+                <div class="dosage-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Athletes: 1 tablet per 10kg body weight</div>
+                    <div class="step-description">If you train hard (CrossFit, marathon, weightlifting), you can take up to 1 tablet per 10kg. Example: 80kg person = 8 tablets/day.</div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Important:</strong> Do NOT take Algine Plus close to bedtime. The natural energy boost from spirulina and CoQ10 can keep you awake. Always take in the morning!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Formula Breakdown -->
+    <section class="formula-section" id="formula">
+        <div class="formula-container">
+            <div class="section-header reveal">
+                <div class="section-label">Per 5-Tablet Serving</div>
+                <h2 class="section-title">Exact Formula Breakdown</h2>
+                <p class="section-subtitle">Every ingredient listed with exact amounts and benefits. No proprietary blends, no hiding.</p>
+            </div>
+
+            <div class="formula-grid">
+                <div class="formula-card reveal">
+                    <div class="formula-icon">🌊</div>
+                    <div class="formula-amount">1,500mg</div>
+                    <div class="formula-name">Seaweed Blend</div>
+                    <div class="formula-benefit">Spirulina (green) + Kelp (brown) + Dulse (red) from Greenland & Iceland waters</div>
+                </div>
+
+                <div class="formula-card reveal">
+                    <div class="formula-icon">🦴</div>
+                    <div class="formula-amount">163mg</div>
+                    <div class="formula-name">Calcium</div>
+                    <div class="formula-dri">20% Daily Reference Intake</div>
+                    <div class="formula-benefit">Supports bone health, teeth, energy metabolism, and pH balance</div>
+                </div>
+
+                <div class="formula-card reveal">
+                    <div class="formula-icon">⚡</div>
+                    <div class="formula-amount">500µg</div>
+                    <div class="formula-name">Coenzyme Q10</div>
+                    <div class="formula-benefit">Powerful antioxidant for cellular energy production and cardiovascular health</div>
+                </div>
+
+                <div class="formula-card reveal">
+                    <div class="formula-icon">🧬</div>
+                    <div class="formula-amount">200µg</div>
+                    <div class="formula-name">Iodine (I-127)</div>
+                    <div class="formula-dri">133% Daily Reference Intake</div>
+                    <div class="formula-benefit">Essential for thyroid function, nervous system, metabolism, and healthy skin</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;" class="reveal">
+                <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+                    <strong>Plus:</strong> 15 vitamins, 20 minerals, 25 trace elements, 18 amino acids, Omega-3/6/9 fatty acids, chlorophyll, natural enzymes, and over 100 bioactive compounds.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Species Section (Updated with Latin names) -->
+    <section class="species-section" id="species">
+        <div class="species-container">
+            <div class="section-header reveal">
+                <div class="section-label">The 3-Seaweed Formula</div>
+                <h2>Spirulina + Kelp + Dulse<br>Nature's Perfect Trio</h2>
+                <p>Each seaweed species brings unique nutrients that work synergistically to support every system in your body.</p>
+            </div>
+            
+            <div class="species-grid">
+                <div class="species-card green reveal">
+                    <div class="species-icon">🌿</div>
+                    <div class="species-name">Green Seaweed (Spirulina)</div>
+                    <div class="species-latin">Chlorophyta</div>
+                    <ul class="species-benefits">
+                        <li>Chlorophyll for cellular detoxification</li>
+                        <li>Complete protein (all 9 essential amino acids)</li>
+                        <li>B-vitamins for energy & focus</li>
+                        <li>Iron & Vitamin A for immunity</li>
+                        <li>Natural energy without caffeine crash</li>
+                    </ul>
+                </div>
+                
+                <div class="species-card brown reveal">
+                    <div class="species-icon">🌊</div>
+                    <div class="species-name">Brown Seaweed (Kelp)</div>
+                    <div class="species-latin">Ascophyllum Nodosum</div>
+                    <ul class="species-benefits">
+                        <li>Iodine for thyroid & metabolism</li>
+                        <li>Alginates for heavy metal binding</li>
+                        <li>Fucoxanthin for fat metabolism</li>
+                        <li>Omega-3 fatty acids (EPA/DHA)</li>
+                        <li>Natural fiber for gut health</li>
+                    </ul>
+                </div>
+                
+                <div class="species-card red reveal">
+                    <div class="species-icon">🔴</div>
+                    <div class="species-name">Red Seaweed (Dulse)</div>
+                    <div class="species-latin">Palmaria Palmata</div>
+                    <ul class="species-benefits">
+                        <li>Iron & potassium for blood health</li>
+                        <li>Vitamin C for immune support</li>
+                        <li>Sulfated polysaccharides (anti-viral)</li>
+                        <li>Collagen-building minerals</li>
+                        <li>Cardiovascular support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
     <section class="legacy-section" id="legacy">
         <div class="legacy-container">
             <div class="legacy-timeline reveal">
                 <div class="timeline-year">1988</div>
                 <div class="legacy-content">
-                    <div class="legacy-label">36 Years of Excellence</div>
-                    <h2>A Swedish Legacy of Purity & Science</h2>
+                    <div class="legacy-label">36 Years of Swedish Excellence</div>
+                    <h2>Trusted Worldwide<br>Since 1988</h2>
                     <p class="legacy-description">
-                        Founded in 1988 in Örebro, Sweden, Algine Products began with a single vision: to bring the world's purest seaweed nutrition from the Arctic Ocean to those who need it most.
+                        Founded in Örebro, Sweden, Algine Products began with a single mission: bring the purest Arctic seaweed nutrition to the world. What started as exports to Slovenia has grown into a global presence across 20+ countries.
                     </p>
                     <p class="legacy-description">
-                        What started as exports to Slovenia has grown into a global presence across 20+ countries on every continent, with branch offices worldwide. Our headquarters and production facility remain in Sweden, where we maintain pharmaceutical-grade standards that exceed both Swedish and EU requirements.
+                        Featured on Swedish TV's "Du är vad du äter" with Anna Skipper, we've maintained pharmaceutical-grade production standards (HACCP & GMP) for over three decades. Our facility in Sweden processes every batch by hand, ensuring the quality that made us famous.
                     </p>
                 </div>
             </div>
@@ -1219,314 +1299,13 @@
                     <div class="legacy-stat-label">Countries Worldwide</div>
                 </div>
                 <div class="legacy-stat">
-                    <div class="legacy-stat-number">36</div>
-                    <div class="legacy-stat-label">Years of Expertise</div>
+                    <div class="legacy-stat-number">300</div>
+                    <div class="legacy-stat-label">Tablets Per Bottle</div>
                 </div>
                 <div class="legacy-stat">
                     <div class="legacy-stat-number">100%</div>
-                    <div class="legacy-stat-label">Swedish Quality Control</div>
+                    <div class="legacy-stat-label">Made in Sweden</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW: Certifications Section -->
-    <section class="certifications-section" id="certifications">
-        <div class="certifications-container">
-            <div class="section-header reveal">
-                <div class="section-label">Pharmaceutical-Grade Standards</div>
-                <h2 class="section-title">Certified by World's Strictest Authorities</h2>
-                <p class="section-subtitle">Our production facility meets or exceeds the highest international standards for food safety, quality assurance, and environmental protection.</p>
-            </div>
-
-            <div class="cert-grid">
-                <div class="cert-card reveal">
-                    <div class="cert-icon">🇸🇪</div>
-                    <div class="cert-name">Swedish National Food Administration</div>
-                    <div class="cert-description">Premises approved and regularly inspected by Livsmedelsverket, Sweden's strictest food safety authority.</div>
-                </div>
-
-                <div class="cert-card reveal">
-                    <div class="cert-icon">🇪🇺</div>
-                    <div class="cert-name">EU EFSA Compliance</div>
-                    <div class="cert-description">Full compliance with European Food Safety Authority standards for supplements and natural health products.</div>
-                </div>
-
-                <div class="cert-card reveal">
-                    <div class="cert-icon">🏭</div>
-                    <div class="cert-name">HACCP Certified</div>
-                    <div class="cert-description">Hazard Analysis Critical Control Points system ensures every batch is free from contamination.</div>
-                </div>
-
-                <div class="cert-card reveal">
-                    <div class="cert-icon">⚗️</div>
-                    <div class="cert-name">GMP Certified</div>
-                    <div class="cert-description">Good Manufacturing Practice certification guarantees pharmaceutical-grade production standards.</div>
-                </div>
-
-                <div class="cert-card reveal">
-                    <div class="cert-icon">🇨🇦</div>
-                    <div class="cert-name">Health Canada Approved</div>
-                    <div class="cert-description">Officially licensed natural health product in Canada.</div>
-                    <div class="cert-number">NPN: 80007659</div>
-                </div>
-
-                <div class="cert-card reveal">
-                    <div class="cert-icon">✓</div>
-                    <div class="cert-name">Swedish Health Food Council</div>
-                    <div class="cert-description">Products conform to the rigorous standards of Hälsokostrådet for ethical and transparent labeling.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Origin Section -->
-    <section class="origin-section" id="origin">
-        <div class="origin-container">
-            <div class="origin-image reveal">
-                <div class="arctic-map"></div>
-                <div class="harvest-badge">
-                    <div class="harvest-badge-title">Licensed Harvest Region</div>
-                    <div class="harvest-badge-text">Greenland & Iceland • 66-72°N</div>
-                </div>
-            </div>
-            <div class="origin-content reveal">
-                <div class="origin-label">Environmentally Protected Waters</div>
-                <h2>Our Own Arctic Ocean Territory</h2>
-                <p class="origin-description">
-                    We hold exclusive, environmentally protected harvest rights in the pristine Arctic waters surrounding Iceland and Greenland — the only regions on Earth still free from industrial pollution, heavy shipping, and agricultural runoff.
-                </p>
-                <p class="origin-description">
-                    Our seaweed grows wild in nutrient-dense glacial waters, absorbing trace minerals from ancient volcanic bedrock and benefiting from 24-hour summer sunlight. Every harvest is done by hand or small fishing boats (never industrial trawlers) to preserve the delicate marine ecosystem.
-                </p>
-                <div class="origin-stats">
-                    <div class="origin-stat">
-                        <div class="origin-stat-number">100%</div>
-                        <div class="origin-stat-label">Hand-Harvested</div>
-                    </div>
-                    <div class="origin-stat">
-                        <div class="origin-stat-number">-20°C</div>
-                        <div class="origin-stat-label">Freeze-Dried (97% Retention)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4 Seaweed Species Section -->
-    <section class="species-section" id="species">
-        <div class="species-container">
-            <div class="section-header reveal">
-                <div class="origin-label">The Algine Plus Formula</div>
-                <h2>4 Arctic Seaweed Species<br>Found Nowhere Else on Earth</h2>
-                <p>Our proprietary blend combines green, brown, red, and calcium-rich seaweeds — a complete spectrum of marine nutrition engineered by nature over millions of years.</p>
-            </div>
-            
-            <div class="species-grid">
-                <div class="species-card green reveal">
-                    <div class="species-icon">🌿</div>
-                    <div class="species-name">Green Seaweed</div>
-                    <div class="species-type">Chlorophyta</div>
-                    <ul class="species-benefits">
-                        <li>Chlorophyll for cellular detox</li>
-                        <li>Carotenoids & antioxidants</li>
-                        <li>Vitamin C & E complex</li>
-                        <li>Immune system support</li>
-                    </ul>
-                </div>
-                
-                <div class="species-card brown reveal">
-                    <div class="species-icon">🌊</div>
-                    <div class="species-name">Brown Seaweed</div>
-                    <div class="species-type">Phaeophyceae</div>
-                    <ul class="species-benefits">
-                        <li>Alginates for heavy metal binding</li>
-                        <li>Fucoxanthin for metabolism</li>
-                        <li>Iodine for thyroid health</li>
-                        <li>Omega-3 fatty acids (EPA/DHA)</li>
-                    </ul>
-                </div>
-                
-                <div class="species-card red reveal">
-                    <div class="species-icon">🔴</div>
-                    <div class="species-name">Red Seaweed</div>
-                    <div class="species-type">Rhodophyta</div>
-                    <ul class="species-benefits">
-                        <li>Sulfated polysaccharides</li>
-                        <li>Anti-viral compounds</li>
-                        <li>Collagen production support</li>
-                        <li>Cardiovascular health</li>
-                    </ul>
-                </div>
-                
-                <div class="species-card calcium reveal">
-                    <div class="species-icon">⚪</div>
-                    <div class="species-name">Calcium Seaweed</div>
-                    <div class="species-type">Lithothamnion</div>
-                    <ul class="species-benefits">
-                        <li>74 trace minerals</li>
-                        <li>Alkaline pH stabilization</li>
-                        <li>Bone density support</li>
-                        <li>Magnesium & calcium balance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Complete Nutrition Section -->
-    <section class="nutrition-section" id="nutrition">
-        <div class="nutrition-container">
-            <div class="section-header reveal">
-                <div class="section-label">Complete Whole Food Nutrition</div>
-                <h2>Everything Your Body Needs<br>In One Arctic Formula</h2>
-            </div>
-            
-            <div class="nutrition-grid">
-                <div class="nutrition-facts reveal">
-                    <h3>Algine Plus Contains:</h3>
-                    
-                    <div class="nutrition-categories">
-                        <div class="nutrition-category">
-                            <div class="category-title">
-                                Vitamins
-                                <span class="category-count">15</span>
-                            </div>
-                            <div class="category-items">A, B1, B2, B3, B5, B6, B7, B9, B12, C, D, E, K1, K2, Choline</div>
-                        </div>
-                        
-                        <div class="nutrition-category">
-                            <div class="category-title">
-                                Essential Minerals
-                                <span class="category-count">20</span>
-                            </div>
-                            <div class="category-items">Calcium, Magnesium, Potassium, Sodium, Phosphorus, Sulfur, Chloride, Iodine, Iron, Zinc, Copper, Manganese, Chromium, Molybdenum, Selenium, Silicon, Boron, Vanadium, Cobalt, Fluoride</div>
-                        </div>
-                        
-                        <div class="nutrition-category">
-                            <div class="category-title">
-                                Trace Elements
-                                <span class="category-count">25+</span>
-                            </div>
-                            <div class="category-items">Including rare earth minerals from volcanic bedrock, only found in Arctic seaweed</div>
-                        </div>
-                        
-                        <div class="nutrition-category">
-                            <div class="category-title">
-                                Amino Acids
-                                <span class="category-count">18</span>
-                            </div>
-                            <div class="category-items">Complete protein spectrum including all 9 essential amino acids</div>
-                        </div>
-                        
-                        <div class="nutrition-category">
-                            <div class="category-title">
-                                Essential Fatty Acids
-                            </div>
-                            <div class="category-items">Omega-3 (EPA/DHA/ALA), Omega-6 (GLA), Omega-9, CLA (Conjugated Linoleic Acid)</div>
-                        </div>
-                        
-                        <div class="nutrition-category">
-                            <div class="category-title">
-                                Additional Compounds
-                            </div>
-                            <div class="category-items">Coenzyme Q10, Alginates, Fucoxanthin, Chlorophyll, Mannitol, Natural Enzymes, Antioxidants, Dietary Fiber, Polysaccharides</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="nutrition-highlights reveal">
-                    <div class="highlight-card">
-                        <div class="highlight-number">100+</div>
-                        <div class="highlight-label">Active Compounds Per Serving</div>
-                    </div>
-                    
-                    <div class="highlight-card">
-                        <div class="highlight-number">97%</div>
-                        <div class="highlight-label">Nutrient Retention (Freeze-Dried)</div>
-                    </div>
-                    
-                    <div class="highlight-card">
-                        <div class="highlight-number">0</div>
-                        <div class="highlight-label">Synthetic Additives or Fillers</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Purity Promise Section -->
-    <section class="purity-section" id="purity">
-        <div class="purity-container">
-            <div class="reveal">
-                <div class="section-label">Absolute Purity Guaranteed</div>
-                <h2>What's NOT in Algine Plus</h2>
-                <p class="purity-subtitle">We believe purity is just as important as potency. That's why Algine Plus contains zero synthetic additives, allergens, or unnecessary ingredients.</p>
-            </div>
-            
-            <div class="purity-grid reveal">
-                <div class="purity-badge">
-                    <div class="purity-badge-icon">🚫</div>
-                    <div class="purity-badge-text">Gluten Free</div>
-                </div>
-                <div class="purity-badge">
-                    <div class="purity-badge-icon">🚫</div>
-                    <div class="purity-badge-text">Lactose Free</div>
-                </div>
-                <div class="purity-badge">
-                    <div class="purity-badge-icon">🚫</div>
-                    <div class="purity-badge-text">Soy Free</div>
-                </div>
-                <div class="purity-badge">
-                    <div class="purity-badge-icon">🚫</div>
-                    <div class="purity-badge-text">GMO Free</div>
-                </div>
-                <div class="purity-badge">
-                    <div class="purity-badge-icon">🌱</div>
-                    <div class="purity-badge-text">100% Vegan</div>
-                </div>
-                <div class="purity-badge">
-                    <div class="purity-badge-icon">❄️</div>
-                    <div class="purity-badge-text">Freeze-Dried Raw</div>
-                </div>
-            </div>
-            
-            <div class="no-list reveal">
-                <h4>Absolutely NO:</h4>
-                <ul class="no-grid">
-                    <li>Gluten</li>
-                    <li>Lactose</li>
-                    <li>Soy</li>
-                    <li>Corn</li>
-                    <li>Wheat</li>
-                    <li>Yeast</li>
-                    <li>Sugar</li>
-                    <li>Citrus</li>
-                    <li>Colorants</li>
-                    <li>Animal Products</li>
-                    <li>Nuts</li>
-                    <li>Tomato</li>
-                    <li>Egg</li>
-                    <li>Dairy</li>
-                    <li>Caffeine</li>
-                    <li>Alcohol</li>
-                    <li>Taurine</li>
-                    <li>Preservatives</li>
-                    <li>Synthetic Additives</li>
-                    <li>Flow Agents</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="shop">
-        <div class="cta-content reveal">
-            <h2>Experience Arctic Purity</h2>
-            <p>Join thousands across 20+ countries who have discovered the transformative power of the world's most complete whole-food nutrition from the last unpolluted waters on Earth.</p>
-            <div class="cta-buttons">
-                <a href="#" class="primary-cta">Shop Algine Plus — $79</a>
-                <a href="#" class="secondary-cta">Subscribe & Save 25%</a>
             </div>
         </div>
     </section>
@@ -1536,7 +1315,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>Algine Products Sweden</h3>
-                <p>Since 1988, we've been bringing the purest Arctic seaweed nutrition to the world. Made in Sweden, trusted globally.</p>
+                <p>Since 1988, we've been bringing the purest Arctic seaweed nutrition to the world. Made in Sweden, trusted globally, featured on TV.</p>
                 <ul class="contact-info">
                     <li><strong>Address:</strong> Box 1722, 701 17 Örebro, Sweden</li>
                     <li><strong>Phone:</strong> <a href="tel:+46192000000">+46-19-20 00 00</a></li>
@@ -1548,9 +1327,9 @@
             <div class="footer-section">
                 <h4>Product</h4>
                 <ul>
-                    <li><a href="#">Algine Plus Formula</a></li>
-                    <li><a href="#">Other Products</a></li>
-                    <li><a href="#">Subscription Plans</a></li>
+                    <li><a href="#pricing">Pricing & Bulk Discounts</a></li>
+                    <li><a href="#formula">Formula Breakdown</a></li>
+                    <li><a href="#species">3 Seaweed Species</a></li>
                     <li><a href="#">Wholesale Inquiry</a></li>
                 </ul>
             </div>
@@ -1558,26 +1337,26 @@
             <div class="footer-section">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#">About Us (Since 1988)</a></li>
-                    <li><a href="#">Global Offices</a></li>
-                    <li><a href="#">Certifications</a></li>
-                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#legacy">About Us (Since 1988)</a></li>
+                    <li><a href="#">As Seen on TV</a></li>
+                    <li><a href="#">Global Distribution</a></li>
+                    <li><a href="#">HACCP & GMP Certified</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Dosage Guide</a></li>
                     <li><a href="#">Shipping Info</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Become a Distributor</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Algine Products Sweden AB. Established 1988. | HACCP & GMP Certified | Health Canada NPN: 80007659 | Swedish National Food Administration Approved</p>
+            <p>&copy; 2024 Algine Products Sweden AB. Established 1988. | HACCP & GMP Certified | Health Canada NPN: 80007659 | Featured on "Du är vad du äter" | Swedish National Food Administration Approved</p>
         </div>
     </footer>
 
